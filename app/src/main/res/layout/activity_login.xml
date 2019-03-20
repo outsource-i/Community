@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <com.onion.community.view.HeaderBar
+            android:elevation="@dimen/x2"
+            app:headerbar_t="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <include layout="@layout/widget_toolbar_white"/>
+
+    </com.onion.community.view.HeaderBar>
+
+    <com.onion.community.view.LoginView
+            android:id="@+id/login_rg"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x50"
+            android:orientation="horizontal">
+
+        <RadioButton
+                android:id="@+id/login_rb_sms"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="登录"
+                android:textColor="@drawable/login_view_text_color" />
+        <!--android:background="@drawable/login_view_bg"-->
+        <RadioButton
+                android:id="@+id/login_rb_pwd"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:gravity="center"
+                android:text="注册"
+                android:textColor="@drawable/login_view_text_color" />
+    </com.onion.community.view.LoginView>
+
+
+    <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/login_edt_phone"
+            style="@style/login_edit"
+            android:layout_marginTop="@dimen/x40"
+            android:drawableLeft="@mipmap/login_icon_user"
+            android:hint="请输入手机号"
+            android:inputType="number"
+            android:maxLength="11"
+            android:theme="@style/login_edit"/>
+    <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/login_edt_password"
+            style="@style/login_edit"
+            android:drawableLeft="@mipmap/login_icon_password"
+            android:hint="请输入密码"
+            android:layout_marginTop="@dimen/x10"
+            android:inputType="numberPassword"
+            android:maxLength="11"
+            android:theme="@style/login_edit"/>
+
+    <android.support.v7.widget.AppCompatButton
+            android:textColor="@color/white"
+            android:layout_marginTop="@dimen/x50"
+            android:id="@+id/login_login"
+            android:text="登录"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:background="@drawable/status_gra_btn"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="@dimen/x250"
+            android:layout_height="@dimen/x40"/>
+</LinearLayout>

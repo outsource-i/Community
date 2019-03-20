@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- This is the line -->
+    <item android:right="-1dp" >
+        <shape>
+            <corners android:topLeftRadius="@dimen/x5" android:bottomLeftRadius="@dimen/x5"></corners>
+            <stroke android:width="1dp" android:color="@color/toolbar_color"></stroke>
+            <size android:width="@dimen/x101" android:height="@dimen/x30"></size>
+        </shape>
+    </item>
+
+</layer-list>

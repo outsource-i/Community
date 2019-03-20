@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:background="@color/white"
+              android:focusableInTouchMode="true"
+              android:focusable="true"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <com.onion.community.view.HeaderBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <android.support.design.widget.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    app:elevation="0dp">
+            <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x40"
+                    android:background="@drawable/status_gra"
+                    android:weightSum="1"
+                    app:contentInsetStart="0dp"
+                    app:layout_scrollFlags="scroll|enterAlways">
+
+                <RelativeLayout
+                        android:id="@+id/toolbar_rl"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <ImageView
+                            android:visibility="gone"
+                            android:id="@+id/toolbar_back"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/x15"
+                            android:paddingRight="@dimen/x20"
+                            android:src="@drawable/back_select"/>
+
+                    <TextView
+                            android:id="@+id/toolbar_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/s16"/>
+
+                    <ImageView
+                            android:visibility="visible"
+                            android:id="@+id/toolbar_setting"
+                            android:layout_width="@dimen/x24"
+                            android:layout_height="@dimen/x24"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="@dimen/x20"
+                            android:src="@mipmap/self_setting"/>
+
+                </RelativeLayout>
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.AppBarLayout>
+
+    </com.onion.community.view.HeaderBar>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/self_swipe"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <com.onion.community.view.OvalBg
+                    app:mult="3"
+                    android:id="@+id/self_oval"
+                    app:speed="1.6"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x100" />
+
+            <android.support.v4.widget.NestedScrollView
+                    android:id="@+id/self_nested"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <android.support.v7.widget.CardView
+                            android:id="@+id/self_card"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/x15"
+                            android:layout_marginTop="@dimen/x15"
+                            android:layout_marginRight="@dimen/x15"
+                            android:clickable="true"
+                            app:cardCornerRadius="@dimen/x10"
+                            app:cardElevation="@dimen/x3">
+                        <!--android:foreground="?android:attr/selectableItemBackground"-->
+
+                        <RelativeLayout
+                                android:id="@+id/self_rl_account"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical"
+                                android:paddingTop="@dimen/x20"
+                                android:paddingLeft="@dimen/x20"
+                                android:paddingBottom="@dimen/x10">
+
+                            <LinearLayout
+                                    android:id="@+id/self_card_ll1"
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                <ImageView
+                                        android:id="@+id/self_headimg"
+                                        android:layout_gravity="center_vertical"
+                                        android:src="@mipmap/head_img"
+                                        android:layout_width="@dimen/x44"
+                                        android:layout_height="@dimen/x44" />
+                                <LinearLayout
+                                        android:layout_gravity="center_vertical"
+                                        android:orientation="vertical"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content">
+                                    <ImageView
+                                            android:id="@+id/self_isvip"
+                                            android:layout_marginLeft="@dimen/x5"
+                                            android:src="@mipmap/my_vip_no"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"/>
+                                    <TextView
+                                            android:layout_marginTop="@dimen/x5"
+                                            android:id="@+id/self_phone"
+                                            android:layout_marginLeft="@dimen/x5"
+                                            android:text="*** **** ****"
+                                            android:textColor="@color/gray_6"
+                                            android:textSize="@dimen/s14"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                        android:id="@+id/self_vip_ll"
+                                        android:layout_gravity="center_vertical"
+                                        android:orientation="vertical"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+                                    <TextView
+                                            android:background="@drawable/self_open_vip_bg"
+                                            android:id="@+id/self_open_vip"
+                                            android:paddingRight="@dimen/x10"
+                                            android:textColor="@color/self_vip"
+                                            android:textSize="@dimen/s12"
+                                            android:layout_gravity="right"
+                                            android:text="开通会员"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content" />
+                                    <TextView
+                                            android:paddingRight="@dimen/x10"
+                                            android:textColor="@color/self_vip_1"
+                                            android:textSize="@dimen/s10"
+                                            android:layout_gravity="right"
+                                            android:text="专享VIP权益"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content" />
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <RelativeLayout
+                                    android:id="@+id/self_rl_sign"
+                                    android:layout_below="@+id/self_card_ll1"
+                                    android:orientation="horizontal"
+                                    android:layout_marginTop="@dimen/x25"
+                                    android:paddingLeft="@dimen/x20"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                <ImageView
+                                        android:scaleType="centerCrop"
+                                        android:layout_centerVertical="true"
+                                        android:id="@+id/self_wallet"
+                                        android:src="@mipmap/self_sign"
+                                        android:layout_width="@dimen/x40"
+                                        android:layout_height="@dimen/x40" />
+                                <TextView
+                                        android:id="@+id/self_my_account"
+                                        android:layout_centerVertical="true"
+                                        android:layout_toRightOf="@+id/self_wallet"
+                                        android:textSize="@dimen/s14"
+                                        android:textColor="@color/gray_3"
+                                        android:layout_marginLeft="@dimen/x5"
+                                        android:text="一键签到"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" />
+                                <View
+                                        android:visibility="invisible"
+                                        android:id="@+id/self_view_1"
+                                        android:layout_centerInParent="true"
+                                        android:background="@color/gray_line"
+                                        android:layout_width="@dimen/x1"
+                                        android:layout_height="@dimen/x30"/>
+                                <LinearLayout
+                                        android:id="@+id/self_ll2"
+                                        android:gravity="center_vertical"
+                                        android:layout_marginLeft="@dimen/x10"
+                                        android:layout_toRightOf="@+id/self_view_1"
+                                        android:orientation="horizontal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+                                    <ImageView
+                                            android:scaleType="centerCrop"
+                                            android:layout_centerVertical="true"
+                                            android:id="@+id/self_signin"
+                                            android:src="@mipmap/gold_img"
+                                            android:layout_width="@dimen/x35"
+                                            android:layout_height="@dimen/x35" />
+                                    <TextView
+                                            android:id="@+id/self_my_sign"
+                                            android:layout_centerVertical="true"
+                                            android:layout_toRightOf="@+id/self_signin"
+                                            android:textSize="@dimen/s14"
+                                            android:textColor="@color/gray_3"
+                                            android:layout_marginLeft="@dimen/x5"
+                                            android:text="暂无金币"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content" />
+                                    <TextView
+                                            android:layout_marginLeft="@dimen/x3"
+                                            android:layout_centerVertical="true"
+                                            android:textSize="@dimen/s14"
+                                            android:text="个"
+                                            android:textColor="@color/gray_3"
+                                            android:layout_toRightOf="@+id/self_my_sign"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"/>
+                                </LinearLayout>
+
+                            </RelativeLayout>
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+                    <TextView
+                            android:text="我的服务"
+                            android:textSize="@dimen/x16"
+                            android:textColor="@color/gray_6"
+                            android:layout_marginBottom="@dimen/x5"
+                            android:layout_marginLeft="@dimen/x20"
+                            android:layout_marginTop="@dimen/x30"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    <View
+                            android:background="@color/gray_line"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/x5"/>
+                    <android.support.v7.widget.RecyclerView
+                            android:layout_marginTop="@dimen/x15"
+                            android:id="@+id/self_recy_fun"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                    </android.support.v7.widget.RecyclerView>
+
+                </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
+        </RelativeLayout>
+    </android.support.v4.widget.SwipeRefreshLayout>
+</LinearLayout>

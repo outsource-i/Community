@@ -1,0 +1,330 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:textColorPrimary">@color/gray_3</item>
+        <item name="colorPrimary">@color/toolbar_color</item>
+        <item name="colorPrimaryDark">@color/toolbar_color</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="capitaldialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:background">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="AppTheme.Dark.Dialog" parent="Theme.AppCompat.Dialog">
+        <item name="colorAccent">@color/white</item>
+        <item name="android:textColorPrimary">@color/gray_c</item>
+        <item name="android:background">@color/black</item>
+    </style>
+    <style name="full">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <style name="AppTheme.regist" parent="AppTheme">
+        <item name="android:textColorHint">@color/gray_6</item>
+        <item name="android:progressBackgroundTint">@color/toolbar_color</item>
+        <item name="colorControlNormal">@color/gray_c</item>
+        <item name="colorControlActivated">@color/toolbar_color</item>
+        <item name="colorControlHighlight">@color/gray_3</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="colorButtonNormal">@color/white</item>
+        <item name="android:colorButtonNormal">@color/white</item>
+    </style>
+
+    <style name="AppTheme.pserondialog" >
+        <item name="android:windowBackground">@color/nobg</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+    <style name="AppTheme.splash" parent="AppTheme.regist">
+        <item name="android:windowBackground">@color/toolbar_color</item>
+    </style>
+    <style name="AppTheme.home" parent="AppTheme.regist">
+        <item name="android:windowBackground">@color/white</item>
+    </style>
+    <style name="AppTheme.person" parent="AppTheme.regist">
+        <item name="android:windowBackground">@color/white</item>
+    </style>
+    <style name="login_edit" parent="Theme.AppCompat.Light">
+        <item name="android:singleLine">true</item>
+        <item name="android:paddingLeft">@dimen/x15</item>
+        <item name="android:paddingBottom">@dimen/x15</item>
+        <item name="android:drawablePadding">@dimen/x15</item>
+        <item name="android:textSize">@dimen/s14</item>
+        <item name="android:textColor">@color/gray_3</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_width">@dimen/x300</item>
+        <item name="android:layout_height">@dimen/x50</item>
+        <item name="colorControlNormal">@color/gray_dcdcdc</item>
+        <item name="colorControlActivated">@color/main_color</item>
+    </style>
+
+    <style name="phone_edit">
+        <item name="android:singleLine">true</item>
+        <item name="android:paddingLeft">@dimen/x15</item>
+        <item name="android:drawablePadding">@dimen/x15</item>
+        <item name="android:textSize">@dimen/s14</item>
+        <item name="android:textColor">@color/gray_3</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:background">@drawable/login_edit_bg</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!--textview基类-->
+    <style name="tv_parent">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <!-- pact签约页面 textview-->
+    <style name="tv_parent.pact_tv">
+        <item name="android:textColor">@color/gray_6</item>
+        <item name="android:textSize">@dimen/s14</item>
+        <item name="android:layout_marginTop">@dimen/y15</item>
+        <item name="android:layout_marginLeft">@dimen/x35</item>
+    </style>
+
+    <style name="appcompatbtn" parent="tv_parent">
+        <item name="android:layout_height">@dimen/x45</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/button_ripple_blue</item>
+        <item name="android:textSize">@dimen/s18</item>
+    </style>
+    <style name="tv_login" parent="tv_parent">
+        <item name="android:textColor">@color/btn_color</item>
+        <item name="android:textSize">@dimen/s14</item>
+    </style>
+
+    <style name="person_rb">
+        <item name="android:textColor">@drawable/person_tab_text</item>
+        <item name="android:button">@null</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/s14</item>
+    </style>
+    <style name="person_edt">
+        <item name="android:maxLength">20</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:background">@drawable/person_edit_bcg</item>
+        <item name="android:textSize">@dimen/s14</item>
+        <item name="android:textColor">@color/gray_3</item>
+        <item name="android:textColorHint">@color/rightColor</item>
+        <item name="android:layout_width">@dimen/x300</item>
+        <item name="android:paddingLeft">@dimen/x15</item>
+        <item name="android:paddingRight">@dimen/x15</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="person_tv">
+        <item name="android:clickable">true</item>
+        <item name="android:paddingRight">@dimen/x10</item>
+        <item name="android:drawableRight">@mipmap/borrowing_icon_arrows</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">@dimen/x15</item>
+        <item name="android:textColor">@color/gray_3</item>
+        <item name="android:textColorHint">@color/rightColor</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_marginTop">@dimen/y10</item>
+        <item name="android:background">@drawable/person_tv_bg</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="main_rb">
+        <item name="android:gravity">center</item>
+        <item name="android:button">@null</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <!--<item name="android:drawablePadding">5dp</item>-->
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+    <!-- 身份证页面的textview-->
+    <style name="tv_idcard" parent="tv_parent">
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:textSize">@dimen/s14</item>
+        <item name="android:layout_width">@dimen/x300</item>
+        <item name="android:layout_marginTop">@dimen/y10</item>
+    </style>
+    <!-- 身份证页面的imageview 照片区域-->
+    <style name="iv_idcard" >
+        <item name="android:paddingLeft">@dimen/x5</item>
+        <item name="android:paddingRight">@dimen/x5</item>
+        <item name="android:paddingBottom">@dimen/y5</item>
+        <item name="android:paddingTop">@dimen/y5</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">@dimen/y18</item>
+        <item name="android:layout_width">@dimen/x300</item>
+        <item name="android:layout_height">@dimen/y180</item>
+    </style>
+
+    <style name="face_idcard" >
+        <item name="android:paddingBottom">@dimen/y5</item>
+        <item name="android:paddingTop">@dimen/y5</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">@dimen/y18</item>
+        <item name="android:background">@drawable/facecard</item>
+        <item name="android:layout_width">@dimen/x212</item>
+        <item name="android:layout_height">@dimen/y280</item>
+    </style>
+
+
+
+    <style name="produce_tv">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">@dimen/y16</item>
+        <item name="android:textSize">@dimen/s15</item>
+        <item name="android:textColor">@color/gray_3</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="produce_tv_charge">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/s15</item>
+        <item name="android:textColor">@color/gray_3</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="tv_info">
+        <!--<item name="android:layout_below">@id/iv_info_logo</item>//TODO-->
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginTop">@dimen/y15</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="tv_info_item">
+        <item name="android:textColor">@color/gray_3</item>
+        <item name="android:paddingTop">@dimen/x10</item>
+        <item name="android:paddingBottom">@dimen/x10</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/layout_ripple_white</item>
+        <item name="android:drawablePadding">@dimen/x10</item>
+        <item name="android:textSize">@dimen/s14</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="item_borrow_up">
+        <item name="android:textColor">@color/gray_3</item>
+        <item name="android:textSize">@dimen/s15</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="item_borrow_down">
+        <item name="android:textColor">@color/gray_3</item>
+        <item name="android:layout_marginTop">@dimen/y15</item>
+        <item name="android:textSize">@dimen/s15</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="borrow_detail">
+        <item name="android:textSize">@dimen/s14</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:textColor">@color/gray_6</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="tv_self">
+        <item name="android:textSize">@dimen/s15</item>
+        <item name="android:textColor">@color/gray_6</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="repay_tv">
+        <item name="android:textSize">@dimen/s17</item>
+        <item name="android:textColor">@color/gray_3</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="xian">
+        <item name="android:background">@color/gray_e</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+    </style>
+    <style name="ios_dialog_style">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+    <style name="withdraw_edit">
+        <item name="android:singleLine">true</item>
+        <item name="android:paddingLeft">@dimen/x15</item>
+        <item name="android:drawablePadding">@dimen/x15</item>
+        <item name="android:textSize">@dimen/s14</item>
+        <item name="android:textColor">@color/gray_3</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="product_seekbar" >
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/seekbar_progress</item>
+        <!--<item name="indeterminateDrawable">@drawable/seekbar_track_material</item>-->
+        <item name="android:thumb">@drawable/seekbar_thumb</item>
+        <!--<item name="splitTrack">true</item>-->
+        <!--<item name="useDisabledAlpha">false</item>-->
+        <!--<item name="focusable">true</item>-->
+        <!--<item name="paddingStart">5dip</item>-->
+        <!--<item name="paddingEnd">5dip</item>-->
+        <!--<item name="mirrorForRtl">true</item>-->
+    </style>
+    <style name="pop">
+        <item name="android:windowEnterAnimation">@anim/popin</item>
+        <item name="android:windowExitAnimation">@anim/popout</item>
+    </style>
+    <style name="switchbutton">
+        <item name="colorControlActivated">@color/toolbar_color</item>
+        <!-- Inactive thumb color switch关闭时的拇指按钮的颜色 -->
+        <item name="colorSwitchThumbNormal">@color/white</item>
+        <!-- Inactive track color(30% transparency) switch关闭时的轨迹的颜色  30%这个颜色 -->
+        <item name="android:colorForeground">@color/gray_a</item>
+    </style>
+
+    <!--动画-->
+    <style name="person＿dialog_anim" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/person_dialog_enter</item>
+        <item name="android:windowExitAnimation">@anim/person_dialog_exit</item>
+    </style>
+    <style name="ios＿dialog_anim" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/ios_dialog_enter</item>
+        <item name="android:windowExitAnimation">@anim/ios_dialog_exit</item>
+    </style>
+
+    <!--dialog-->
+    <style name="Theme.AppCompat.Light.Dialog.Alert.Self"
+           parent="@style/Theme.AppCompat.Light.Dialog.Alert">
+        <!--修改AlertDialog按钮的颜色-->
+        <item name="colorAccent">@color/toolbar_color</item>
+        <item name="android:textColorPrimary">@color/gray_3</item>
+        <item name="android:textColor">@color/gray_3</item>
+    </style>
+    <style name="toolbar_theme">
+        <item name="colorPrimary">@android:color/transparent</item>
+        <item name="colorPrimaryDark">@android:color/transparent</item>
+    </style>
+</resources>

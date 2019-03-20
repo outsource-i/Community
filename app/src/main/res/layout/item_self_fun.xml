@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:padding="@dimen/x15"
+    android:layout_height="wrap_content">
+    <ImageView
+            android:id="@+id/item_self_iv_img"
+        android:layout_width="@dimen/x40"
+        android:scaleType="centerInside"
+        android:layout_height="@dimen/x40" />
+
+    <TextView
+            android:id="@+id/item_self_tv_name"
+        android:textColor="@color/gray_6"
+        android:text="我的申请"
+            android:textSize="@dimen/s12"
+        android:layout_marginTop="@dimen/x5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>

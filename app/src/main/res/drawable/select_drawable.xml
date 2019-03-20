@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="oval">
+
+    <size android:width="@dimen/x7" android:height="@dimen/x7"/>
+    <!--<corners android:radius="@dimen/x5"/>-->
+    <solid android:color="@color/toolbar_color"/>
+</shape>
