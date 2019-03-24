@@ -1,9 +1,11 @@
 package com.onion.community.bean;
 
+import java.io.Serializable;
+
 /**
  * Created by OnionMac on 2019/3/12.
  */
-public class Article {
+public class Article implements Serializable {
 
     private String id;
     private String communityId;
@@ -22,6 +24,15 @@ public class Article {
     private String createDate;
     private String updateDate;
     private String commentCount;
+    private String uuid;
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
 
     public String getCommentCount() {
         return commentCount;

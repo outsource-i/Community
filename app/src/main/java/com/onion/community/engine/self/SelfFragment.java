@@ -15,15 +15,19 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import butterknife.BindView;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.onion.community.R;
 import com.onion.community.adapter.SelfFunAdapter;
 import com.onion.community.base.fragment.BaseFragment;
+import com.onion.community.bean.Collection;
 import com.onion.community.bean.HttpWrapper;
 import com.onion.community.bean.ProductType;
 import com.onion.community.bean.User;
 import com.onion.community.constant.Constant;
 import com.onion.community.engine.self.SelfContract;
 import com.onion.community.engine.self.SelfPresenter;
+import com.onion.community.engine.self.collection.CollectionActivity;
+import com.onion.community.engine.self.mycommunity.MyCommunityActivity;
 import com.onion.community.util.U;
 import com.onion.community.view.NumberView;
 import com.onion.community.view.OvalBg;
@@ -125,6 +129,7 @@ public class SelfFragment extends BaseFragment<SelfPresenter> implements SelfCon
 
     }
 
+
     @Override
     public void onSupportVisible() {
         super.onSupportVisible();
@@ -158,6 +163,19 @@ public class SelfFragment extends BaseFragment<SelfPresenter> implements SelfCon
     @Override
     protected void initListener() {
         super.initListener();
+        mSelfFunAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+
+                if (position == 0){
+                    startActivity(new Intent(getActivity(), MyCommunityActivity.class));
+                }
+
+                if(position == 1){
+                    startActivity(new Intent(getActivity(), CollectionActivity.class));
+                }
+            }
+        });
         mSelfNested.setOnScrollChangeListener((NestedScrollView.OnScrollChangeListener)
                 (nestedScrollView, i, i1, i2, i3) -> mSelfOval.setData(i1));
     }

@@ -6,14 +6,13 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import butterknife.BindView;
+import com.google.gson.Gson;
+import com.onion.community.AppCenter;
 import com.onion.community.R;
 import com.onion.community.adapter.ArticleAdapter;
 import com.onion.community.adapter.HomeTypeAdapter;
 import com.onion.community.base.fragment.BaseFragment;
-import com.onion.community.bean.Article;
-import com.onion.community.bean.Banners;
-import com.onion.community.bean.HttpWrapper;
-import com.onion.community.bean.ProductType;
+import com.onion.community.bean.*;
 import com.onion.community.constant.Constant;
 import com.onion.community.util.GlideImageLoader;
 import com.onion.community.view.VerticalScrollView;
@@ -37,7 +36,8 @@ public class MainFragment extends BaseFragment<MainPresenter> implements MainCon
     @BindView(R.id.main_article_recy)
     RecyclerView mHomeArticleRecy;
 
-    private List<ProductType> mTypeList = new ArrayList<>();    private int[] mHomeIcon = {R.mipmap.home_card, R.mipmap.home_small, R.mipmap.home_blacklist, R.mipmap.home_credit};
+    private List<ProductType> mTypeList = new ArrayList<>();
+    private int[] mHomeIcon = {R.mipmap.home_card, R.mipmap.home_small, R.mipmap.home_blacklist, R.mipmap.home_credit};
     private HomeTypeAdapter mHomeTypeAdapter;
 
     private ArticleAdapter mArticleAdapter;
@@ -84,6 +84,9 @@ public class MainFragment extends BaseFragment<MainPresenter> implements MainCon
         super.initData();
         mPresenter.getBanner();
         mPresenter.getNews();
+
+
+        mPresenter.getFollowCommunity(getUser().getId());
     }
 
     @Override
@@ -92,18 +95,27 @@ public class MainFragment extends BaseFragment<MainPresenter> implements MainCon
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                swipeRefreshLayout.setRefreshing(false);
+                initData();
             }
         });
     }
 
     @Override
     public void getNewsSuccess(HttpWrapper<List<Article>> listHttpWrapper) {
-
+        swipeRefreshLayout.setRefreshing(false);
         if(Constant.SUCCESS_CODE == listHttpWrapper.code){
             mArticleList.clear();
             mArticleList.addAll(listHttpWrapper.getData());
             mArticleAdapter.notifyDataSetChanged();
+        }
+    }
+
+    @Override
+    public void getFollowCommunityOk(HttpWrapper<List<Community>> listHttpWrapper) {
+        if(Constant.SUCCESS_CODE == listHttpWrapper.getCode()){
+            List<Community> myFollow = listHttpWrapper.getData();
+
+            AppCenter.mSpUtil.putString(Constant.MYFOLLOW_COMMUNITY,new Gson().toJson(myFollow));
         }
     }
 

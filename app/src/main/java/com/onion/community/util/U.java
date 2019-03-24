@@ -41,10 +41,9 @@ import java.net.ConnectException;
 import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
 import java.security.MessageDigest;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -57,6 +56,18 @@ import java.util.regex.Pattern;
 
 public class U {
 
+    public static String toDate(String time) {
+        Long timeLong = Long.parseLong(time);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//要转换的时间格式
+        Date date;
+        try {
+            date = sdf.parse(sdf.format(timeLong));
+            return sdf.format(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
     public static EaseUser getEaseUiInfo(String userName){
         String json = AppCenter.mSpUtil.getString(userName+"ease_user_info");
         return AppCenter.mGson.fromJson(json,EaseUser.class);
@@ -366,12 +377,12 @@ public class U {
             @Override
             public void onProgressChanged(WebView view, int newProgress) {
                 super.onProgressChanged(view, newProgress);
-                if (newProgress == 100) {
-                    progressBar.setVisibility(View.GONE);
-                } else {
-                    progressBar.setVisibility(View.VISIBLE);
-                    progressBar.setProgress(newProgress);
-                }
+//                if (newProgress == 100) {
+//                    progressBar.setVisibility(View.GONE);
+//                } else {
+//                    progressBar.setVisibility(View.VISIBLE);
+//                    progressBar.setProgress(newProgress);
+//                }
             }
         });
 

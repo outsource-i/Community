@@ -2,6 +2,7 @@ package com.onion.community.engine.main;
 
 import com.onion.community.bean.Article;
 import com.onion.community.bean.Banners;
+import com.onion.community.bean.Community;
 import com.onion.community.bean.HttpWrapper;
 import com.onion.community.mvp.BasePresenter;
 import com.onion.community.mvp.BaseView;
@@ -16,6 +17,7 @@ public interface MainContract {
 
         void getNewsSuccess(HttpWrapper<List<Article>> listHttpWrapper);
 
+        void getFollowCommunityOk(HttpWrapper<List<Community>> listHttpWrapper);
     }
 
     interface Presenter extends BasePresenter<View>{
@@ -24,6 +26,7 @@ public interface MainContract {
 
         void getNews();
 
+        void getFollowCommunity(String id);
     }
 
 }

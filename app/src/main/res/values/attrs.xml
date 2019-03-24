@@ -17,6 +17,9 @@
         <attr name="z_radius" format="integer" />
         <attr name="z_fitxy" format="boolean" />
     </declare-styleable>
+    <declare-styleable name="roundView">
+        <attr format="reference|color" name="backgroundColor" />
+    </declare-styleable>
     <!-- 借款详情页面页面的自定义组合View-->
     <declare-styleable name="BorrowDetailView">
         <attr name="borrow_name" format="string"></attr>

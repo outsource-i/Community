@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:clipChildren="false"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+<android.support.v4.widget.NestedScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:clipChildren="false"
+        android:orientation="vertical"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+<LinearLayout
+        android:background="@color/gray_f7f7f7"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x200">
+        <ImageView
+                android:id="@+id/community_gaosi"
+                android:scaleType="fitXY"
+                android:src="@mipmap/img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        <ImageView
+                android:id="@+id/community_back"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:background="#000000"
+                android:alpha="0.4"
+                android:src="@mipmap/zuoarraw"
+                android:layout_marginTop="@dimen/x50"
+                android:layout_width="@dimen/x30"
+                android:layout_height="@dimen/x30"/>
+            <TextView
+                    android:id="@+id/community_c_name"
+                    android:layout_toRightOf="@+id/community_back"
+                    android:layout_below="@+id/community_back"
+                    android:text="红米"
+                    android:textSize="@dimen/x20"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+        <TextView
+                android:id="@+id/community_c_banzhu"
+                android:layout_marginTop="@dimen/x5"
+                android:text="版主:张琦"
+                android:textColor="@color/white"
+                android:textSize="@dimen/s10"
+                android:layout_toRightOf="@+id/community_back"
+                android:layout_below="@+id/community_c_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        <TextView
+                android:id="@+id/community_c_taolun"
+                android:layout_marginTop="@dimen/x5"
+                android:text="版主:张琦"
+                android:textColor="@color/white"
+                android:textSize="@dimen/s10"
+                android:layout_toRightOf="@+id/community_back"
+                android:layout_below="@+id/community_c_banzhu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                    android:visibility="invisible"
+                    android:scaleType="fitXY"
+                    android:id="@+id/community_img_1"
+                    android:layout_marginLeft="@dimen/x30"
+                    android:layout_marginTop="-30dp"
+                    android:src="@mipmap/img"
+                    android:layout_width="@dimen/x80"
+                    android:layout_height="@dimen/x80"/>
+
+        <TextView
+                android:layout_marginTop="@dimen/x20"
+                android:id="@+id/community_follow"
+                android:padding="@dimen/x5"
+                android:background="@drawable/community_back"
+                android:layout_marginRight="@dimen/x10"
+                android:textColor="@color/toolbar_color"
+                android:layout_alignParentRight="true"
+                android:text="关注"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        <TextView
+                android:id="@+id/community_info"
+                android:layout_marginBottom="@dimen/x30"
+                android:text="这是介绍安达市大所大所多"
+                android:textSize="@dimen/s14"
+                android:layout_marginTop="@dimen/x30"
+                android:layout_below="@+id/community_img_1"
+                android:layout_marginLeft="@dimen/x30"
+                android:layout_marginRight="@dimen/x30"
+                android:textColor="@color/gray_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+    </RelativeLayout>
+    <View
+            android:background="@color/gray_e"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x10"/>
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/community_smart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <android.support.v7.widget.RecyclerView
+                android:overScrollMode="never"
+                android:id="@+id/community_recy"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</LinearLayout>
+
+    <ImageView
+            android:visibility="visible"
+            android:scaleType="fitXY"
+            android:id="@+id/community_img"
+            android:layout_marginLeft="@dimen/x30"
+            android:layout_marginTop="170dp"
+            android:src="@mipmap/img"
+            android:layout_width="@dimen/x80"
+            android:layout_height="@dimen/x80"/>
+</RelativeLayout>
+</android.support.v4.widget.NestedScrollView>
+
+
+    <ImageView
+            android:id="@+id/community_xie"
+            android:layout_margin="@dimen/x20"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/xie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+</RelativeLayout>

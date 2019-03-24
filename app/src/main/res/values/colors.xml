@@ -17,13 +17,19 @@
     <color name="gray_f7f7f7">#f7f7f7</color>
     <color name="ff6b3a">#ff6b3a</color>
     <color name="marks_bgcolor">#6076eb</color>
-
+    <color name="tintColor">#515151</color>
     <color name="white">#ffffff</color>
     <color name="gray_c">#CCCCCC</color>
     <color name="gray_e">#e9e9e9</color>
     <color name="gray_dcdcdc">#dcdcdc</color>
     <color name="gray_bg">#efeff4</color>
     <color name="gray_ee">#eeeeee</color>
+    <color name="textPrimary">#2F3640</color>
+
+    <color name="gray_100">#FAFAFA</color>
+    <color name="light_blue_500">#03A9F4</color>
+
+
     <color name="gray_e6">#e6e6e6</color>
     <color name="gray_a">#9c9c9c</color>
     <color name="gray_f3f5f9">#f3f5f9</color>

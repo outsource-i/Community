@@ -86,6 +86,12 @@
             </intent-filter>
         </receiver>
         <activity android:name=".engine.chat.ChatActivity"/>
+        <activity android:name=".engine.TestActivity"/>
+        <activity android:name=".engine.self.collection.CollectionActivity"/>
+        <activity android:name=".engine.self.mycommunity.MyCommunityActivity"/>
+        <activity android:name=".engine.community.post.PostActivity" android:windowSoftInputMode="stateHidden|adjustPan"/>
+        <activity android:name=".engine.community.detail.detail.CommunityDetailActivity"/>
+        <activity android:name=".engine.community.detail.CommunityActivity"/>
         <activity android:name="com.hyphenate.easeui.ui.EaseShowBigImageActivity"/>
         <activity android:name="com.hyphenate.easeui.ui.EaseBaiduMapActivity"/>
         <provider
@@ -98,6 +104,8 @@
                     android:name="android.support.FILE_PROVIDER_PATHS"
                     android:resource="@xml/file_paths" />
         </provider>
+
+
     </application>
 
 </manifest>

@@ -2,6 +2,7 @@ package com.onion.community.engine.main;
 
 import com.onion.community.bean.Article;
 import com.onion.community.bean.Banners;
+import com.onion.community.bean.Community;
 import com.onion.community.bean.HttpWrapper;
 import com.onion.community.di.DataManager;
 import com.onion.community.manager.Result;
@@ -41,5 +42,21 @@ public class MainPresenter extends RxPresenter<MainContract.View> implements  Ma
                         mView.getNewsSuccess(listHttpWrapper);
                     }
                 });
+    }
+
+    @Override
+    public void getFollowCommunity(String id) {
+
+        mDataManager
+                .getApi()
+                .getFollowCommunity(id)
+                .compose(T.D())
+                .subscribeWith(new Result<HttpWrapper<List<Community>>>() {
+                    @Override
+                    protected void onSuccess(HttpWrapper<List<Community>> listHttpWrapper) {
+                        mView.getFollowCommunityOk(listHttpWrapper);
+                    }
+                });
+
     }
 }

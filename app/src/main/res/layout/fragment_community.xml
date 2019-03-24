@@ -1,11 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
               android:orientation="vertical"
                                              android:layout_width="match_parent"
                                              android:layout_height="match_parent">
 
-    <TextView
-            android:text="2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+    <com.onion.community.view.HeaderBar
+            app:headerbar_t="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <include layout="@layout/widget_toolbar_white"/>
+    </com.onion.community.view.HeaderBar>
+    <View
+            android:background="#f7f7f7"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x1"/>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <android.support.v7.widget.RecyclerView
+                android:background="#f7f7f7"
+                android:id="@+id/communitytype_recy"
+                android:layout_width="@dimen/x100"
+                android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+        <android.support.v7.widget.RecyclerView
+                android:background="@color/white"
+                android:id="@+id/community_recy"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
 </LinearLayout>

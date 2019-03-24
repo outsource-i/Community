@@ -1,9 +1,11 @@
 package com.onion.community.bean;
 
+import java.io.Serializable;
+
 /**
  * Created by OnionMac on 2019/3/12.
  */
-public class Community {
+public class Community implements Serializable {
 
     private String id;
     private String onwerId;
@@ -15,6 +17,26 @@ public class Community {
     private String communityCreateId;
     private String createDate;
     private String updateDate;
+
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    private boolean follow;
+
+    public boolean isFollow() {
+        return follow;
+    }
+
+    public void setFollow(boolean follow) {
+        this.follow = follow;
+    }
 
     public String getId() {
         return id;

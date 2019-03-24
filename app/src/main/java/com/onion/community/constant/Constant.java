@@ -4,6 +4,9 @@ package com.onion.community.constant;
 /**
  * Created by zhangqi on 2017/12/20.
  * e-mail : ${email}
+ *
+ * ps -ef | grep java
+ * nohup java -jar user-0.0.1-SNAPSHOT.jar > demo1.log 2>&1 &
  * desc :
  */
 
@@ -24,6 +27,9 @@ public class Constant {
 
     public static final int REFUES = 0;
     public static final int BLACK = 1;
+    public static final String MYFOLLOW_COMMUNITY = "c";
+//    public static final String IMG_BASE = "http://192.168.124.14:8080/";
+    public static final String IMG_BASE = "http://118.25.14.84:8080/";
 
     /**
      * 支付页面接口
