@@ -31,7 +31,7 @@ public class LoginPresenter extends RxPresenter<LoginContract.View> implements L
 
                     @Override
                     protected void onFinish() {
-
+                        mView.dissDialog();
                     }
                 });
     }

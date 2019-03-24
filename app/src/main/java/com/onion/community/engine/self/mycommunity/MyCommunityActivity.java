@@ -60,7 +60,9 @@ public class MyCommunityActivity extends BaseActivity<MyCommunityPresenter> impl
 
         String json = AppCenter.mSpUtil.getString(Constant.MYFOLLOW_COMMUNITY);
         mCommunitys = new Gson().fromJson(json, new TypeToken<List<Community>>() {}.getType());
-
+        for (Community mCommunity : mCommunitys) {
+            mCommunity.setFollow(true);
+        }
         mCollectionRecy.setLayoutManager(new LinearLayoutManager(this));
         communityAdapter = new CommunityAdapter(this,R.layout.item_community,mCommunitys);
         mCollectionRecy.setAdapter(communityAdapter);

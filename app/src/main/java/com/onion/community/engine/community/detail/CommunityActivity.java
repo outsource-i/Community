@@ -2,6 +2,7 @@ package com.onion.community.engine.community.detail;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -92,12 +93,13 @@ public class CommunityActivity extends BaseActivity<CommunityPresenter> implemen
     protected void initData() {
         super.initData();
         mPresenter.getCommunityInfo(communityId);
-        mPresenter.getCommunityArticle(type,communityId,page,pageSize);
+        mPresenter.getCommunityArticle(type,communityId,page,pageSize,false);
     }
 
     @Override
     protected void initListener() {
         super.initListener();
+
         mCommunityBack.setOnClickListener(v -> finish());
         mCommunityXie.setOnClickListener(v -> {
             Intent intent = new Intent(this, PostActivity.class);
@@ -108,13 +110,13 @@ public class CommunityActivity extends BaseActivity<CommunityPresenter> implemen
             @Override
             public void onLoadmore(RefreshLayout refreshlayout) {
                 page++;
-                mPresenter.getCommunityArticle(type,communityId,page,pageSize);
+                mPresenter.getCommunityArticle(type,communityId,page,pageSize,true);
             }
 
             @Override
             public void onRefresh(RefreshLayout refreshlayout) {
                 page = 1;
-                mPresenter.getCommunityArticle(type,communityId,page,pageSize);
+                mPresenter.getCommunityArticle(type,communityId,page,pageSize,false);
             }
         });
 

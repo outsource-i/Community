@@ -8,14 +8,6 @@
         android:layout_height="match_parent">
 
 
-<android.support.v4.widget.NestedScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:clipChildren="false"
-        android:orientation="vertical"
-
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
 <RelativeLayout
         android:layout_width="match_parent"
@@ -34,7 +26,6 @@
         <ImageView
                 android:id="@+id/community_gaosi"
                 android:scaleType="fitXY"
-                android:src="@mipmap/img"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
         <ImageView
@@ -139,11 +130,9 @@
             android:id="@+id/community_img"
             android:layout_marginLeft="@dimen/x30"
             android:layout_marginTop="170dp"
-            android:src="@mipmap/img"
             android:layout_width="@dimen/x80"
             android:layout_height="@dimen/x80"/>
 </RelativeLayout>
-</android.support.v4.widget.NestedScrollView>
 
 
     <ImageView

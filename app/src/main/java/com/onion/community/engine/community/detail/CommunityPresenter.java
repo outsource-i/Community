@@ -34,8 +34,8 @@ public class CommunityPresenter extends RxPresenter<CommunityContract.View> impl
     }
 
     @Override
-    public void getCommunityArticle(int type, String communityId, int page, int pageSize) {
-        get(type,communityId,page,pageSize,false);
+    public void getCommunityArticle(int type, String communityId, int page, int pageSize,boolean flag) {
+        get(type,communityId,page,pageSize,flag);
     }
 
     public void get(int type, String communityId, int page, int pageSize,boolean loadMore){

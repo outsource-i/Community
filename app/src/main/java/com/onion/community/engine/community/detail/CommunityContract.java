@@ -22,6 +22,6 @@ public interface CommunityContract {
 
         void getCommunityInfo(String communityId);
 
-        void getCommunityArticle(int type, String communityId, int page, int pageSize);
+        void getCommunityArticle(int type, String communityId, int page, int pageSize,boolean flag);
     }
 }
