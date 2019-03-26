@@ -14,22 +14,14 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import butterknife.BindView;
-
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.onion.community.R;
 import com.onion.community.adapter.SelfFunAdapter;
 import com.onion.community.base.fragment.BaseFragment;
-import com.onion.community.bean.Collection;
-import com.onion.community.bean.HttpWrapper;
 import com.onion.community.bean.ProductType;
 import com.onion.community.bean.User;
-import com.onion.community.constant.Constant;
-import com.onion.community.engine.self.SelfContract;
-import com.onion.community.engine.self.SelfPresenter;
 import com.onion.community.engine.self.collection.CollectionActivity;
 import com.onion.community.engine.self.mycommunity.MyCommunityActivity;
-import com.onion.community.util.U;
-import com.onion.community.view.NumberView;
 import com.onion.community.view.OvalBg;
 
 import java.util.ArrayList;
@@ -81,7 +73,7 @@ public class SelfFragment extends BaseFragment<SelfPresenter> implements SelfCon
     @BindView(R.id.self_my_sign)
     TextView mSelfMySign;
     @BindView(R.id.self_isvip)
-    ImageView mSelfIsVip;
+    TextView mSelfIsVip;
     @BindView(R.id.self_vip_ll)
     LinearLayout mSelfVipLl;
     @BindView(R.id.self_rl_sign)
@@ -95,9 +87,7 @@ public class SelfFragment extends BaseFragment<SelfPresenter> implements SelfCon
     private int[] mRes = {R.mipmap.my_community, R.mipmap.my_fa, R.mipmap.my_activity,
             R.mipmap.my_guanzhu, R.mipmap.my_strategy, R.mipmap.my_service,
             R.mipmap.my_share};
-    private String[] mNames = {"我的社区", "我的收藏", "我的活动", "我的关注", "问题反馈", "帮助中心", "联系我们"};
-//    private Class[] mClazz = {LoanRecordActivity.class, CustomActivity.class, CompensateActivity.class, OrderActivity.class,
-//            OpinionActivity.class, QuestionActivity.class, SettingActivity.class};
+    private String[] mNames = {"我的社区", "我的收藏", "我的活动", "我的关注"};
     private User mUser;
 
     public static SelfFragment getInstance(String value) {

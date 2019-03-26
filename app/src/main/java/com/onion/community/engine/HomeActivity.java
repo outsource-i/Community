@@ -16,7 +16,6 @@ import com.onion.community.R;
 import com.onion.community.adapter.HomePageAdapter;
 import com.onion.community.base.BaseActivity;
 import com.onion.community.bean.TabEntity;
-import com.onion.community.engine.chat.NewsFragment;
 import com.onion.community.engine.community.CommunityFragment;
 import com.onion.community.engine.main.MainFragment;
 import com.onion.community.engine.self.SelfFragment;
@@ -31,9 +30,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by zhangqi on 2017/12/20.
- * e-mail : ${email}
- * desc :
  */
 
 public class HomeActivity extends BaseActivity<HomePresenter> implements HomeContract.View {
@@ -49,10 +45,10 @@ public class HomeActivity extends BaseActivity<HomePresenter> implements HomeCon
 
     private List<Fragment> mFramentList = new ArrayList<>();
 
-    private String[] mTabName = {"首页","社区","信息", "我的"};
+    private String[] mTabName = {"首页","社区", "我的"};
 
-    private int[] mTabIconNormal = {R.mipmap.home_linq_normal,R.mipmap.shequ_normal, R.mipmap.shequ_normal,R.mipmap.home_wode_normal};
-    private int[] mTabIconSelect = {R.mipmap.home_jiekuan_icon_press, R.mipmap.shequ_press,R.mipmap.shequ_press,R.mipmap.home_wode_dianji_press};
+    private int[] mTabIconNormal = {R.mipmap.home_linq_normal,R.mipmap.shequ_normal,R.mipmap.home_wode_normal};
+    private int[] mTabIconSelect = {R.mipmap.home_jiekuan_icon_press, R.mipmap.shequ_press,R.mipmap.home_wode_dianji_press};
     public int mStatus;
     private long exitTime;
     WeakHandler weakHandler;
@@ -102,7 +98,6 @@ public class HomeActivity extends BaseActivity<HomePresenter> implements HomeCon
 
         mFramentList.add(new MainFragment());
         mFramentList.add(new CommunityFragment());
-        mFramentList.add(new NewsFragment());
         mFramentList.add(new SelfFragment());
 
         mHomeVp.setAdapter(new HomePageAdapter(getSupportFragmentManager(), mFramentList));

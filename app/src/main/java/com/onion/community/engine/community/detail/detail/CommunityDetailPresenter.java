@@ -5,8 +5,6 @@ import com.onion.community.bean.HttpWrapper;
 import com.onion.community.di.DataManager;
 import com.onion.community.manager.Result;
 import com.onion.community.manager.T;
-import com.onion.community.mvp.BasePresenter;
-import com.onion.community.mvp.BaseView;
 import com.onion.community.mvp.RxPresenter;
 
 import javax.inject.Inject;
@@ -45,5 +43,26 @@ public class CommunityDetailPresenter extends RxPresenter<CommunityDetailContrac
                         mView.collection(stringHttpWrapper);
                     }
                 });
+    }
+
+    @Override
+    public void huifu(String data, String id,String userId) {
+        mView.showDialog("回复中..");
+       addSubscribe(mDataManager
+                .getApi()
+                .huifu(data,id,userId)
+                .compose(T.D())
+                .subscribeWith(new Result<HttpWrapper<String>>() {
+                    @Override
+                    protected void onSuccess(HttpWrapper<String> stringHttpWrapper) {
+                        mView.huifuOk(stringHttpWrapper);
+                    }
+
+                    @Override
+                    protected void onFinish() {
+                        super.onFinish();
+                        mView.dissDialog();
+                    }
+                }));
     }
 }

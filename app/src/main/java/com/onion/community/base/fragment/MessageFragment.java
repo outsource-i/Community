@@ -5,14 +5,12 @@ import android.text.TextUtils;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.onion.community.AppCenter;
-import com.onion.community.base.ConfigActivity;
 import com.onion.community.base.MessageActivity;
 import com.onion.community.bean.User;
 import com.onion.community.constant.Constant;
 import me.yokeyword.fragmentation.SupportFragment;
 
 /**
- * Created by zhangqi on 2016/10/13.
  */
 
 public class MessageFragment extends SupportFragment {

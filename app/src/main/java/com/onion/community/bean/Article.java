@@ -3,7 +3,6 @@ package com.onion.community.bean;
 import java.io.Serializable;
 
 /**
- * Created by OnionMac on 2019/3/12.
  */
 public class Article implements Serializable {
 

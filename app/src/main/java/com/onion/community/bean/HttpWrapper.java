@@ -2,10 +2,6 @@ package com.onion.community.bean;
 
 import java.io.Serializable;
 
-/**
- * 核心包装类 封装数据集合
- * Created by zhangqi on 2016/10/8.
- */
 
 public class HttpWrapper<T> implements Serializable {
 

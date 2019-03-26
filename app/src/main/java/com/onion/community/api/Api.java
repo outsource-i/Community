@@ -8,10 +8,8 @@ import retrofit2.http.*;
 
 import java.util.List;
 import java.util.Map;
-import java.util.function.DoubleUnaryOperator;
 
 /**
- * Created by zhangqi on 2016/9/12.
  */
 public interface Api {
 
@@ -59,7 +57,7 @@ public interface Api {
     Flowable<HttpWrapper<Community>> followCommunity(@Field("userId")String userId,@Field("communityId") String communityId);
 
     /**
-     * 关注论坛
+     * 得到论坛信息
      * @return
      */
     @FormUrlEncoded
@@ -70,22 +68,52 @@ public interface Api {
     @POST("article/getCommunityArticles")
     Flowable<HttpWrapper<List<Article>>> getCommunityArticle(@Field("type") int type,@Field("communityId") String communityId,
                                                        @Field("page") int page,
+
                                                        @Field("pageSize") int pageSize);
+
+    /**
+     * 发帖时候 插入 上传图片
+     *
+     * @param uuid
+     * @param map
+     * @return
+     */
     @Multipart
     @POST("image/uploadImage")
     Flowable<HttpWrapper<String>> uploadImage(@Part("uuid") String uuid, @PartMap Map<String, RequestBody> map);
 
+    /**
+     * 发帖
+     * @param article
+     * @return
+     */
     @POST("article/saveCommunityArticles")
     Flowable<HttpWrapper<String>> post(@Body Article article);
 
+    /**
+     * 收藏帖子
+     * @param userId
+     * @param articleId
+     * @return
+     */
     @FormUrlEncoded
     @POST("article/collection")
     Flowable<HttpWrapper<String>> collection(@Field("userId") String userId,@Field("articleId") String articleId);
 
+    /**
+     * 得到一个帖子详情
+     * @param articleId
+     * @return
+     */
     @FormUrlEncoded
     @POST("article/getArticleByArticleId")
     Flowable<HttpWrapper<Article>> getArticle(@Field("articleId") String articleId);
 
+    /**
+     * 得到我的收藏
+     * @param userId
+     * @return
+     */
     @FormUrlEncoded
     @POST("article/getMyCollection")
     Flowable<HttpWrapper<List<Article>>> getMyCollection(@Field("userId") String userId);
@@ -94,5 +122,16 @@ public interface Api {
     @FormUrlEncoded
     @POST("community/getMyCommunity")
     Flowable<HttpWrapper<List<Community>>> getMyCommunity(@Field("userId") String userId);
+
+    /**
+     * 回复
+     * @param data
+     * @param id
+     * @param userId
+     * @return
+     */
+    @FormUrlEncoded
+    @POST("article/huifu")
+    Flowable<HttpWrapper<String>> huifu(@Field("content") String data,@Field("articleId") String id,@Field("userId") String userId);
 }
 

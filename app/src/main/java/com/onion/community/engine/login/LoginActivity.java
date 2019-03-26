@@ -12,9 +12,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import butterknife.BindView;
 import com.google.gson.Gson;
-import com.hyphenate.EMCallBack;
-import com.hyphenate.chat.EMClient;
-import com.hyphenate.exceptions.HyphenateException;
 import com.onion.community.AppCenter;
 import com.onion.community.R;
 import com.onion.community.base.BaseActivity;
@@ -94,9 +91,6 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
                 }else{
                     mPresenter.register(phone,password);
                 }
-
-
-
             }
         });
 
@@ -123,40 +117,13 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     public void loginSuccess(HttpWrapper<User> userHttpWrapper) {
             if(Constant.SUCCESS_CODE == userHttpWrapper.code){
                 User data = userHttpWrapper.getData();
-                    EMClient.getInstance().login(String.valueOf(data.getId()), data.getPassword(), new EMCallBack() {
-                        @Override
-                        public void onSuccess() {
-                            dissDialog();
-                            EMClient.getInstance().groupManager().loadAllGroups();
-                            EMClient.getInstance().chatManager().loadAllConversations();
+                dissDialog();
 
-                            AppCenter.mSpUtil.putString(Constant.USERINFO,new Gson().toJson(userHttpWrapper.getData()));
-                            List<String> usernames = null;
-                            try {
-                                usernames = EMClient.getInstance().contactManager().getAllContactsFromServer();
-                            } catch (HyphenateException e) {
-                                e.printStackTrace();
-                            }
-                            Logger.i(new Gson().toJson(usernames));
-                            startActivity(new Intent(LoginActivity.this, HomeActivity.class));
-                            finish();
-                        }
-
-                        @Override
-                        public void onError(int i, String s) {
-                            showMessage("聊天服务器登录失败!");
-                            dissDialog();
-                            startActivity(new Intent(LoginActivity.this, HomeActivity.class));
-                            finish();
-                        }
-
-                        @Override
-                        public void onProgress(int i, String s) {
-
-                        }
-                    });
-
-
+                AppCenter.mSpUtil.putString(Constant.USERINFO,new Gson().toJson(userHttpWrapper.getData()));
+                List<String> usernames = null;
+                Logger.i(new Gson().toJson(usernames));
+                startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                finish();
             }else{
                 showMessage(userHttpWrapper.getInfo());
             }

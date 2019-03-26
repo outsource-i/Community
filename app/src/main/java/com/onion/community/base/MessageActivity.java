@@ -8,7 +8,6 @@ import com.onion.community.view.IOSLoadingDialog;
 
 
 /**
- * Created by zhangqi on 2016/10/12.
  */
 
 public abstract class MessageActivity extends ConfigActivity{

@@ -9,11 +9,13 @@ import android.util.Base64;
 import android.util.TypedValue;
 import android.view.KeyEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.*;
+import android.widget.EditText;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.OnClick;
 import com.even.mricheditor.ActionType;
@@ -37,12 +39,11 @@ import com.onion.community.post.fragment.EditHyperlinkFragment;
 import com.onion.community.post.fragment.EditTableFragment;
 import com.onion.community.post.fragment.EditorMenuFragment;
 import com.onion.community.post.interfaces.OnActionPerformListener;
-import com.onion.community.post.keyboard.KeyboardUtils;
-import com.onion.community.post.util.FileIOUtil;
-import com.onion.community.util.DensityUtil;
-import com.onion.community.util.StatusBarUtil;
 import com.onion.community.post.keyboard.KeyboardHeightObserver;
 import com.onion.community.post.keyboard.KeyboardHeightProvider;
+import com.onion.community.post.keyboard.KeyboardUtils;
+import com.onion.community.post.util.FileIOUtil;
+import com.onion.community.util.StatusBarUtil;
 import com.onion.community.util.logger.Logger;
 
 import java.util.ArrayList;
@@ -71,6 +72,8 @@ public class PostActivity extends BaseActivity<PostPresenter> implements PostCon
     TextView right;
     @BindView(R.id.post_subject)
     EditText mPostSubject;
+    @BindView(R.id.toolbar_tu)
+    TextView mToollbarTu;
 
     private KeyboardHeightProvider keyboardHeightProvider;
     private boolean isKeyboardShowing;
@@ -187,6 +190,10 @@ public class PostActivity extends BaseActivity<PostPresenter> implements PostCon
             mRichEditorAction.refreshHtml(mRichEditorCallback, onGetHtmlListener);
         });
 
+        mToollbarTu.setOnClickListener(v -> {
+            Intent intent = new Intent(this, ImageGridActivity.class);
+            startActivityForResult(intent, REQUEST_CODE_CHOOSE);
+        });
         right.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -255,17 +262,17 @@ public class PostActivity extends BaseActivity<PostPresenter> implements PostCon
 
     @Override
     public void onKeyboardHeightChanged(int height, int orientation) {
-        isKeyboardShowing = height > 0;
-        if (height > 0) {
-            height = height + DensityUtil.dp2px(120);
-            flAction.setVisibility(View.INVISIBLE);
-            ViewGroup.LayoutParams params = flAction.getLayoutParams();
-            params.height = height;
-            flAction.setLayoutParams(params);
-            performInputSpaceAndDel();
-        } else if (flAction.getVisibility() != View.VISIBLE) {
-            flAction.setVisibility(View.GONE);
-        }
+//        isKeyboardShowing = height > 0;
+//        if (height > 0) {
+//            height = height + DensityUtil.dp2px(120);
+//            flAction.setVisibility(View.INVISIBLE);
+//            ViewGroup.LayoutParams params = flAction.getLayoutParams();
+//            params.height = height;
+//            flAction.setLayoutParams(params);
+//            performInputSpaceAndDel();
+//        } else if (flAction.getVisibility() != View.VISIBLE) {
+//            flAction.setVisibility(View.GONE);
+//        }
     }
 
     //TODO not a good solution

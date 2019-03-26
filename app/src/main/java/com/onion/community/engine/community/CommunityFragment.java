@@ -75,6 +75,7 @@ public class CommunityFragment extends BaseFragment<CommunityPresenter> implemen
 
         for (Community community : myFollowCommunity) {
             community.setFollow(true);
+            community.setId(community.getCommunityId());
         }
         mPresenter.loadType();
     }
@@ -130,6 +131,9 @@ public class CommunityFragment extends BaseFragment<CommunityPresenter> implemen
     public void reMyFollow(){
         mCommunitys.clear();
         mCommunitys.addAll(myFollowCommunity);
+        for (Community mCommunity : mCommunitys) {
+            mCommunity.setFollow(true);
+        }
         communityAdapter.notifyDataSetChanged();
     }
 

@@ -20,7 +20,6 @@ import android.webkit.WebViewClient;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-import com.hyphenate.easeui.domain.EaseUser;
 import com.onion.community.AppCenter;
 import com.onion.community.constant.Constant;
 import com.onion.community.constant.UserConstant;
@@ -67,14 +66,6 @@ public class U {
             e.printStackTrace();
             return null;
         }
-    }
-    public static EaseUser getEaseUiInfo(String userName){
-        String json = AppCenter.mSpUtil.getString(userName+"ease_user_info");
-        return AppCenter.mGson.fromJson(json,EaseUser.class);
-    }
-
-    public static void saveEaseUiInfo(EaseUser easeUser){
-        AppCenter.mSpUtil.putString(easeUser.getUsername()+"ease_user_info",AppCenter.mGson.toJson(easeUser));
     }
     public static boolean isFixedPhone(String fixedPhone) {
         String reg = "(?:(\\(\\+?86\\))(0[0-9]{2,3}\\-?)?([2-9][0-9]{6,7})+(\\-[0-9]{1,4})?)|" +

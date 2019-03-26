@@ -63,37 +63,31 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <meta-data
-                android:name="EASEMOB_APPKEY"
-                android:value="yangcong#community" /> <!-- 声明SDK所需的service SDK核心功能 -->
-        <service
-                android:name="com.hyphenate.chat.EMChatService"
-                android:exported="true" />
-        <service
-                android:name="com.hyphenate.chat.EMJobService"
-                android:exported="true"
-                android:permission="android.permission.BIND_JOB_SERVICE" /> <!-- 声明SDK所需的receiver -->
-        <receiver android:name="com.hyphenate.chat.EMMonitorReceiver">
-            <intent-filter>
-                <action android:name="android.intent.action.PACKAGE_REMOVED" />
 
-                <data android:scheme="package" />
-            </intent-filter>
-            <!-- 可选filter -->
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="android.intent.action.USER_PRESENT" />
-            </intent-filter>
-        </receiver>
-        <activity android:name=".engine.chat.ChatActivity"/>
         <activity android:name=".engine.TestActivity"/>
         <activity android:name=".engine.self.collection.CollectionActivity"/>
+        <activity android:name=".engine.community.detail.detail.CommmentActivity"/>
         <activity android:name=".engine.self.mycommunity.MyCommunityActivity"/>
         <activity android:name=".engine.community.post.PostActivity" android:windowSoftInputMode="stateHidden|adjustPan"/>
         <activity android:name=".engine.community.detail.detail.CommunityDetailActivity"/>
         <activity android:name=".engine.community.detail.CommunityActivity"/>
-        <activity android:name="com.hyphenate.easeui.ui.EaseShowBigImageActivity"/>
-        <activity android:name="com.hyphenate.easeui.ui.EaseBaiduMapActivity"/>
+        <receiver
+                android:name=".listener.JReceiver"
+                android:enabled="true">
+            <intent-filter>
+                <!--Required 用户注册SDK的intent-->
+                <action android:name="cn.jpush.android.intent.REGISTRATION" />
+                <!--Required 用户接收SDK消息的intent-->
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" />
+                <!--Required 用户接收SDK通知栏信息的intent-->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" />
+                <!--Required 用户打开自定义通知栏的intent-->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" />
+                <!-- 接收网络变化 连接/断开 since 1.6.3 -->
+                <action android:name="cn.jpush.android.intent.CONNECTION" />
+                <category android:name="com.jinhuhang.uurecovery" />
+            </intent-filter>
+        </receiver>
         <provider
                 android:name="android.support.v4.content.FileProvider"
                 android:authorities="com.onion.community.fileProvider"

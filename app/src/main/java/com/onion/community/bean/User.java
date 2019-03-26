@@ -2,10 +2,8 @@ package com.onion.community.bean;
 
 
 import java.io.Serializable;
-import java.util.Date;
 
 /**
- * Created by Administrator on 2018/11/24 0024.
  */
 public class User implements Serializable {
 

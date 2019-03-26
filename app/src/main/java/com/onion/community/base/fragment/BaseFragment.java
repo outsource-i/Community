@@ -13,8 +13,6 @@ import com.onion.community.mvp.BaseView;
 import javax.inject.Inject;
 
 /**
- * Created by codeest on 2016/8/2.
- * MVP Fragment基类
  */
 public abstract class BaseFragment<T extends BasePresenter> extends SimpleFragment implements BaseView {
 

@@ -5,7 +5,6 @@ import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 
 /**
- * Created by zhangqi on 2016/10/13.
  */
 
 public abstract class RxFragment extends SimpleFragment {

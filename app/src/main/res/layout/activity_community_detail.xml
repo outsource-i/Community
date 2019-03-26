@@ -225,11 +225,25 @@ android:layout_height="match_parent">
 </LinearLayout>
 </android.support.v4.widget.NestedScrollView>
     <LinearLayout
+            android:gravity="center_vertical"
             android:visibility="gone"
+            android:orientation="vertical"
             android:layout_alignParentBottom="true"
             android:layout_width="match_parent"
-            android:background="@color/red_money"
+            android:background="@color/white"
             android:layout_height="40dp">
-
+        <View
+                android:background="@color/gray_f7f7f7"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x1"></View>
+            <TextView
+                    android:id="@+id/c_detail_huifu"
+                    android:layout_marginLeft="@dimen/x15"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="@dimen/s16"
+                    android:textColor="@color/gray_9"
+                    android:text="点击此处进行回复"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
     </LinearLayout>
 </RelativeLayout>

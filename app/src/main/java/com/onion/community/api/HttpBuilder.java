@@ -1,13 +1,8 @@
 package com.onion.community.api;
 
 import android.app.Application;
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-
-
-import java.util.concurrent.TimeUnit;
-
 import com.onion.community.api.Interceptor.HeaderInterceptor;
 import com.onion.community.api.Interceptor.HttpLogger;
 import com.onion.community.constant.Constant;
@@ -19,11 +14,8 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
-/**
- * Created by OnionMac on 2017/12/27.
- * httpBuilder类
- * 构建 retrofit okhttpClient对象
- */
+import java.util.concurrent.TimeUnit;
+
 
 public class HttpBuilder {
 

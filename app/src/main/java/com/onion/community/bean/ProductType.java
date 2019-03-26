@@ -3,7 +3,6 @@ package com.onion.community.bean;
 import java.io.Serializable;
 
 /**
- * created by zhangqi on 2018/12/24
  */
 public class ProductType implements Serializable {
 

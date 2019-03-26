@@ -2,20 +2,12 @@ package com.onion.community.constant;
 
 
 /**
- * Created by zhangqi on 2017/12/20.
- * e-mail : ${email}
- *
- * ps -ef | grep java
- * nohup java -jar user-0.0.1-SNAPSHOT.jar > demo1.log 2>&1 &
- * desc :
  */
 
 public class Constant {
 
     //平台
     public static final String PLATFORM = "Android";
-    public static final String PACKAGE = "com.kaka.qianbao";
-    public static final String APPNAME = "咔咔钱包";
     public static final String PROJECT_NAME = "YHS";
     public static final String SP_LOCAL = "config";
     public static final int PAY_SUCCESS = 1000;
@@ -47,61 +39,12 @@ public class Constant {
     public static final String VERSION_ADDRESS = "http://node.youmishanjie.com/getVersionInfo.action";
         public static final String BASEURL_REGISTER = "http://app.youmishanjie.com/";
     public static final String SIGN = "jhhymsj";
-    //白骑士合作编号
-    public static final String APP_PARTNERID = "jinhuhang";
-    //用户信息
     public static final String USERINFO = "userinfo";
-    //是否加载过guide页
-    public static final String GUIDE = "guide";
-    public static final String TOOLBAR_COLOR = "#1e82d2";
-    public static final String TOKENKEY = "tokenKey";
-    public static final String DEVICE = "device";
 
-    /**
-     * 判断消息已读未读
-     */
-    public static final String MESSAGE_YES = "y";
-    public static final String MESSAGE_NO = "n";
-
-    public static final String PHONE_SIGN = "7";
     //返回Code
     public static final int SUCCESS_CODE = 200;
     public static final int ERROR_CODE = 201;
     public static final String VIP_WAIT = "1019";
-
-    public static final String REGISTER_AGAIN = "1002";
-    public static final String SMS_TOKEN = "1009";
-    public static final String VIP_NO = "1017";
-    public static final String VIP_OVERDU = "1018";
-    public static final String TOKEN_TIMEOUT = "301";
-    public static final String PACT_FAILD = "2001";
-    public static final String REFUSE = "203";
-    public static final String NODE_NO = "207";
-    public static final String NODE_OK = "208";
-    public static final String ZHIMA_CODE = "220";
-    public static final String CONTACT_OUT = "209";
-    public static final String AUTH_ALL_OK = "2"; //认证全部完成
-    public static final String AUTH_NO_OK = "1"; //认证未完成
-    public static final String AUTH_FAILD = "3";//认证失败未解禁
-    public static final String AUTH_WAIT = "4";//有异步节点未返回报告
-    /**
-     * MD5错误
-     */
-    public static final String SIGN_CODE = "302";
-    public static final String ID_CODE = "202";
-    /**
-     * 白骑士错误
-     */
-    public static final String BQSLOSE_CODE = "300";
-
-    public static final String USERID = "per_id";
-
-    /**
-     * 银行存管开户地址
-     */
-    public static final String BANKCUSTODY = "http://192.168.1.107:8080/api/haikou/registAndOpenHaiKou.do";
-    public static final String BANKCUSTODY_RESULT = "http://192.168.1.107:8080/api/haikou/bingBankInfo.do";
-    public static final String CONTRACT_FILE = "recovery_contract";
 
     /**
      */

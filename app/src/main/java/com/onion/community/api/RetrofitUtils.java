@@ -1,12 +1,10 @@
 package com.onion.community.api;
 
 
-import com.onion.community.constant.Constant;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 
 /**
- * Created by zhangqi on 2016/9/12.
  */
 public class RetrofitUtils {
 

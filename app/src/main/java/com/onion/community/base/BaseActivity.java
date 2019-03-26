@@ -11,8 +11,6 @@ import io.reactivex.disposables.CompositeDisposable;
 import javax.inject.Inject;
 
 /**
- * Created by codeest on 2016/8/2.
- * MVP activity基类
  */
 public abstract class BaseActivity<T extends BasePresenter> extends SimpleActivity implements BaseView {
 

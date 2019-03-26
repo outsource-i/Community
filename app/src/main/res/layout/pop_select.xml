@@ -22,13 +22,13 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/x1"/>
     <TextView
-            android:id="@+id/pop_select_share"
+            android:id="@+id/pop_select_huifu"
             android:gravity="center_horizontal"
             android:layout_marginTop="@dimen/x5"
             android:layout_marginBottom="@dimen/x5"
             android:layout_marginLeft="@dimen/x10"
             android:layout_marginRight="@dimen/x10"
-            android:text="分享"
+            android:text="回复"
             android:textSize="@dimen/s14"
             android:textColor="@color/gray_3"
             android:layout_width="wrap_content"

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent">
+    <com.onion.community.view.HeaderBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <include layout="@layout/toolbar_right"></include>
+    </com.onion.community.view.HeaderBar>
+    <EditText
+            android:id="@+id/comment_input"
+            android:layout_margin="@dimen/x10"
+            android:padding="@dimen/x10"
+            android:maxLines="10"
+            android:hint="输入您的回复内容,不得超过100字"
+            android:gravity="top|left"
+            android:background="@color/gray_f7f7f7"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x100"/>
+</LinearLayout>

@@ -1,6 +1,6 @@
 package com.onion.community.engine.community.detail.detail;
 
-import android.os.Bundle;
+import android.content.Intent;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -8,7 +8,6 @@ import android.view.View;
 import android.webkit.WebView;
 import android.widget.*;
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CircleCrop;
 import com.bumptech.glide.request.RequestOptions;
@@ -24,8 +23,6 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.zyyoona7.lib.EasyPopup;
 import com.zyyoona7.lib.HorizontalGravity;
 import com.zyyoona7.lib.VerticalGravity;
-
-import java.util.Date;
 
 public class CommunityDetailActivity extends BaseActivity<CommunityDetailPresenter> implements CommunityDetailContract.View {
 
@@ -75,6 +72,7 @@ public class CommunityDetailActivity extends BaseActivity<CommunityDetailPresent
 
     private EasyPopup mCirclePop;
     private View view;
+    private View huifu;
 
     @Override
     protected void initView() {
@@ -96,6 +94,7 @@ public class CommunityDetailActivity extends BaseActivity<CommunityDetailPresent
                 .setBackgroundDimEnable(true)
                 .createPopup();
         view = mCirclePop.getView(R.id.pop_select_shoucang);
+        huifu = mCirclePop.getView(R.id.pop_select_huifu);
     }
 
     @Override
@@ -112,8 +111,17 @@ public class CommunityDetailActivity extends BaseActivity<CommunityDetailPresent
     }
 
     @Override
+    public void huifuOk(HttpWrapper<String> stringHttpWrapper) {
+
+    }
+
+    @Override
     protected void initListener() {
         super.initListener();
+        huifu.setOnClickListener(v -> {
+            Intent intent = new Intent(this,CommmentActivity.class);
+            startActivityForResult(intent,CommmentActivity.REQUEST_COMMENT);
+        });
         view.setOnClickListener(v -> {
             mCirclePop.dismiss();
             mPresenter.shoucang(getUser().getId(),article.getId());
@@ -121,6 +129,16 @@ public class CommunityDetailActivity extends BaseActivity<CommunityDetailPresent
         mToolbarRight.setOnClickListener(v -> {
             mCirclePop.showAtAnchorView(mToolbar, VerticalGravity.BELOW, HorizontalGravity.RIGHT, 0, 0);
         });
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == CommmentActivity.REQUEST_COMMENT && resultCode == CommmentActivity.RESULT_COMMENT){
+            String stringExtra = data.getStringExtra(CommmentActivity.data);
+            mPresenter.huifu(stringExtra,article.getId(),getUser().getId());
+        }
     }
 
     @Override

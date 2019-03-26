@@ -11,8 +11,6 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 /**
- * Created by codeest on 16/8/11.
- * 无MVP的Fragment基类
  */
 
 public abstract class SimpleFragment extends MessageFragment {

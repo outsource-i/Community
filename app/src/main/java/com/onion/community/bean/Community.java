@@ -9,6 +9,7 @@ public class Community implements Serializable {
 
     private String id;
     private String onwerId;
+    private String communityId;
     private String communityName;
     private String communityPeopleCount;
     private String communityImg;
@@ -17,6 +18,14 @@ public class Community implements Serializable {
     private String communityCreateId;
     private String createDate;
     private String updateDate;
+
+    public String getCommunityId() {
+        return communityId;
+    }
+
+    public void setCommunityId(String communityId) {
+        this.communityId = communityId;
+    }
 
     private User user;
 

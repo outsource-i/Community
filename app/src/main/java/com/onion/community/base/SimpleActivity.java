@@ -9,11 +9,6 @@ import butterknife.Unbinder;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 
-/**
- * Created by zhangqi on 2017/12/20.
- * e-mail : ${email}
- * desc :
- */
 
 public abstract class SimpleActivity extends MessageActivity {
 
