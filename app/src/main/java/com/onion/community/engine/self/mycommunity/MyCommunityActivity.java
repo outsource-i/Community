@@ -56,7 +56,7 @@ public class MyCommunityActivity extends BaseActivity<MyCommunityPresenter> impl
         setStatusBarColor(R.color.white);
 
         mToolbarBack.setOnClickListener(v -> finish());
-        mToolbarName.setText("我的论坛");
+        mToolbarName.setText("我的社区");
 
         String json = AppCenter.mSpUtil.getString(Constant.MYFOLLOW_COMMUNITY);
         mCommunitys = new Gson().fromJson(json, new TypeToken<List<Community>>() {}.getType());

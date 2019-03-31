@@ -33,5 +33,44 @@
             android:textColor="@color/gray_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
+    <LinearLayout
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:id="@+id/pop_select_manager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <View
+                android:background="@color/gray_e"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x1"/>
+        <TextView
+                android:id="@+id/pop_select_delete"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="@dimen/x5"
+                android:layout_marginBottom="@dimen/x5"
+                android:layout_marginLeft="@dimen/x10"
+                android:layout_marginRight="@dimen/x10"
+                android:text="删帖"
+                android:textSize="@dimen/s14"
+                android:textColor="@color/gray_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        <View
+                android:background="@color/gray_e"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x1"/>
+        <TextView
+                android:id="@+id/pop_select_stick"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="@dimen/x5"
+                android:layout_marginBottom="@dimen/x5"
+                android:layout_marginLeft="@dimen/x10"
+                android:layout_marginRight="@dimen/x10"
+                android:text="置顶"
+                android:textSize="@dimen/s14"
+                android:textColor="@color/gray_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+    </LinearLayout>
 
 </LinearLayout>

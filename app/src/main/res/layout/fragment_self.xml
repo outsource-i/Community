@@ -149,13 +149,20 @@
                                 </LinearLayout>
 
                                 <LinearLayout
-                                        android:visibility="invisible"
+                                        android:visibility="visible"
                                         android:id="@+id/self_vip_ll"
                                         android:layout_gravity="center_vertical"
                                         android:orientation="vertical"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content">
+                                    <ImageView
+                                            android:layout_marginRight="@dimen/x30"
+                                            android:layout_gravity="right"
+                                            android:src="@mipmap/manager"
+                                            android:layout_width="@dimen/x30"
+                                            android:layout_height="@dimen/x30"/>
                                     <TextView
+                                            android:visibility="gone"
                                             android:background="@drawable/self_open_vip_bg"
                                             android:id="@+id/self_open_vip"
                                             android:paddingRight="@dimen/x10"
@@ -166,6 +173,8 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content" />
                                     <TextView
+                                            android:visibility="gone"
+
                                             android:paddingRight="@dimen/x10"
                                             android:textColor="@color/self_vip_1"
                                             android:textSize="@dimen/s10"
