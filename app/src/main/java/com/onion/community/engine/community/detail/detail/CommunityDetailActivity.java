@@ -95,6 +95,12 @@ public class CommunityDetailActivity extends BaseActivity<CommunityDetailPresent
                 .createPopup();
         view = mCirclePop.getView(R.id.pop_select_shoucang);
         huifu = mCirclePop.getView(R.id.pop_select_huifu);
+
+        if(getUser().getAuthority() == 1){
+            // 管理员权限
+            View view = mCirclePop.getView(R.id.pop_select_manager);
+            view.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override
