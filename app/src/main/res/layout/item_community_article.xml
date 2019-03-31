@@ -26,14 +26,27 @@
                     android:text="这是用户名字"
                     android:textSize="@dimen/s12"
                     android:textColor="@color/gray_3"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            <TextView
+                    android:visibility="gone"
+                    android:textColor="@color/red_money"
+                    android:layout_marginLeft="@dimen/x5"
+                    android:padding="@dimen/x3"
+                    android:background="@drawable/activity_bg"
+                    android:id="@+id/item_community_article_type"
+                    android:text="活动"
+                    android:textSize="@dimen/s12"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             <ImageView
+                    android:visibility="gone"
                     android:paddingLeft="@dimen/x10"
                     android:paddingRight="@dimen/x10"
                     android:src="@mipmap/xiala"
-                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"/>
         </LinearLayout>
      <TextView

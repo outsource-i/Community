@@ -6,6 +6,7 @@ import com.onion.community.di.scope.LoanScope;
 import com.onion.community.engine.community.detail.CommunityActivity;
 import com.onion.community.engine.community.detail.detail.CommunityDetailActivity;
 import com.onion.community.engine.community.post.PostActivity;
+import com.onion.community.engine.self.activity.ActivityActivity;
 import com.onion.community.engine.self.collection.CollectionActivity;
 import com.onion.community.engine.self.mycommunity.MyCommunityActivity;
 import dagger.Component;
@@ -26,5 +27,7 @@ public interface LoanComponent {
     void inject(CollectionActivity collectionActivity);
 
     void inject(MyCommunityActivity myCommunityActivity);
+
+    void inject(ActivityActivity activityActivity);
 
 }

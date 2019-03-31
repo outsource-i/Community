@@ -83,6 +83,8 @@ public class PostActivity extends BaseActivity<PostPresenter> implements PostCon
     CheckBox mPostHd;
     @BindView(R.id.post_gg)
     CheckBox mPostGg;
+    @BindView(R.id.post_type)
+    LinearLayout mPostType;
 
     private List<CheckBox> boxList = new ArrayList<>();
 
@@ -131,6 +133,8 @@ public class PostActivity extends BaseActivity<PostPresenter> implements PostCon
         back.setOnClickListener(v -> finish());
         name.setText("发表主题");
 
+
+
         community = (Community) getIntent().getSerializableExtra(COMMUNITY_DATA);
 
         initImageLoader();
@@ -170,14 +174,50 @@ public class PostActivity extends BaseActivity<PostPresenter> implements PostCon
         boxList.add(mPostPt);
         boxList.add(mPostHd);
         boxList.add(mPostGg);
-
         for (CheckBox checkBox : boxList) {
-            if(checkBox.isChecked()){
-                return;
-            }
+            checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
-            boxList.get(mPreCb).setChecked(false);
-            checkBox.setChecked(true);
+                }
+            });
+        }
+        mPostPt.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked) {
+                    mPostHd.setChecked(false);
+                    mPostGg.setChecked(false);
+                    mPostPt.setChecked(true);
+                }
+            }
+        });
+        mPostHd.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    mPostPt.setChecked(false);
+                    mPostGg.setChecked(false);
+                    mPostHd.setChecked(true);
+                }
+
+            }
+        });
+        mPostGg.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    mPostHd.setChecked(false);
+                    mPostPt.setChecked(false);
+                    mPostGg.setChecked(true);
+                }
+
+            }
+        });
+
+        Logger.i(getUser().getAuthority()+"");
+        if(getUser().getAuthority() == 1){
+            mPostType.setVisibility(View.VISIBLE);
         }
     }
 
@@ -270,6 +310,13 @@ public class PostActivity extends BaseActivity<PostPresenter> implements PostCon
                     article.setContent(html);
                     article.setUserId(getUser().getId());
                     article.setUuid(uuid);
+
+                    for (int i = 0; i < boxList.size(); i++) {
+                        if(boxList.get(i).isChecked()){
+                            article.setType((i +1)+"");
+                        }
+                    }
+
                     mPresenter.post(article);
                 }
             };

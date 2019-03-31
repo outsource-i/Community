@@ -246,4 +246,30 @@ android:layout_height="match_parent">
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
     </LinearLayout>
+
+    <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/c_detail_baoming"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:layout_width="100dp"
+            android:layout_height="100dp">
+        <TextView
+                android:text="点击报名"
+                android:textSize="@dimen/s14"
+                android:textColor="@color/red_money"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        <ImageView
+                android:layout_gravity="center_vertical"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/baoming"
+                android:scaleType="centerInside"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+    </LinearLayout>
 </RelativeLayout>

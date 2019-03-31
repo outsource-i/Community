@@ -15,11 +15,15 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import butterknife.BindView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.onion.community.AppCenter;
 import com.onion.community.R;
 import com.onion.community.adapter.SelfFunAdapter;
 import com.onion.community.base.fragment.BaseFragment;
 import com.onion.community.bean.ProductType;
 import com.onion.community.bean.User;
+import com.onion.community.constant.Constant;
+import com.onion.community.engine.login.LoginActivity;
+import com.onion.community.engine.self.activity.ActivityActivity;
 import com.onion.community.engine.self.collection.CollectionActivity;
 import com.onion.community.engine.self.mycommunity.MyCommunityActivity;
 import com.onion.community.view.OvalBg;
@@ -116,7 +120,11 @@ public class SelfFragment extends BaseFragment<SelfPresenter> implements SelfCon
         mSelfFunAdapter = new SelfFunAdapter(mActivity, R.layout.item_self_fun, mFunList);
         mSelfRecyFun.setAdapter(mSelfFunAdapter);
 
-
+        mToolbarSetting.setOnClickListener(v -> {
+            AppCenter.mSpUtil.putString(Constant.USERINFO,null);
+            startActivity(new Intent(getActivity(), LoginActivity.class));
+            getActivity().finish();
+        });
     }
 
 
@@ -163,6 +171,9 @@ public class SelfFragment extends BaseFragment<SelfPresenter> implements SelfCon
 
                 if(position == 1){
                     startActivity(new Intent(getActivity(), CollectionActivity.class));
+                }
+                if(position == 2){
+                    startActivity(new Intent(getActivity(), ActivityActivity.class));
                 }
             }
         });

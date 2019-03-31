@@ -71,6 +71,7 @@
         <activity android:name=".engine.community.post.PostActivity" android:windowSoftInputMode="stateHidden|adjustPan"/>
         <activity android:name=".engine.community.detail.detail.CommunityDetailActivity"/>
         <activity android:name=".engine.community.detail.CommunityActivity"/>
+        <activity android:name=".engine.self.activity.ActivityActivity"/>
         <receiver
                 android:name=".listener.JReceiver"
                 android:enabled="true">

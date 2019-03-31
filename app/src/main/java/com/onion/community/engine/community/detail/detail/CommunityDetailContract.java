@@ -16,6 +16,8 @@ public interface CommunityDetailContract {
 
         void huifuOk(HttpWrapper<String> stringHttpWrapper);
 
+        void signupOk(HttpWrapper<String> stringHttpWrapper);
+
     }
 
     interface Presenter extends BasePresenter<View>{
@@ -26,5 +28,6 @@ public interface CommunityDetailContract {
 
         void huifu(String data, String id,String userId);
 
+        void baoming(String id, String id1);
     }
 }

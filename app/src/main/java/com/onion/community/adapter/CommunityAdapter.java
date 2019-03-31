@@ -41,7 +41,19 @@ public class CommunityAdapter extends BaseQuickAdapter<Article, BaseViewHolder> 
                 .placeholder(R.mipmap.zhanwei).error(R.mipmap.zhanwei))
                 .into((ImageView)helper.getView(R.id.item_community_article_img));
 
-
+        switch (item.getType()){
+            case "1":
+                helper.setVisible(R.id.item_community_article_type,false);
+                break;
+            case "2":
+                helper.setText(R.id.item_community_article_type,"活动");
+                helper.setVisible(R.id.item_community_article_type,true);
+                break;
+            case "3":
+                helper.setText(R.id.item_community_article_type,"公告");
+                helper.setVisible(R.id.item_community_article_type,true);
+                break;
+        }
     }
 
 

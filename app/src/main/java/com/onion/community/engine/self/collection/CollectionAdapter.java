@@ -36,6 +36,21 @@ public class CollectionAdapter extends BaseQuickAdapter<Article, BaseViewHolder>
                 .load(item.getUser().getHeadImg())
                 .apply(RequestOptions.bitmapTransform(new CircleCrop()))
                 .into((ImageView) helper.getView(R.id.item_collection_img));
+
+        switch (item.getType()){
+            case "1":
+                helper.setVisible(R.id.item_collection_type,false);
+                break;
+            case "2":
+                helper.setText(R.id.item_collection_type,"活动");
+                helper.setVisible(R.id.item_collection_type,true);
+                break;
+            case "3":
+                helper.setText(R.id.item_collection_type,"公告");
+                helper.setVisible(R.id.item_collection_type,true);
+                break;
+        }
+
     }
 
 

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:background="@color/gray_e"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <com.onion.community.view.HeaderBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <include layout="@layout/toolbar_right">
+
+        </include>
+    </com.onion.community.view.HeaderBar>
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:layout_marginTop="@dimen/x10"
+            android:id="@+id/activity_smart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/activity_recy"
+                android:overScrollMode="never"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+</LinearLayout>

@@ -65,4 +65,25 @@ public class CommunityDetailPresenter extends RxPresenter<CommunityDetailContrac
                     }
                 }));
     }
+
+    @Override
+    public void baoming(String id, String id1) {
+        mView.showDialog("报名..");
+        addSubscribe(mDataManager
+                .getApi()
+                .baoming(id,id1)
+                .compose(T.D())
+                .subscribeWith(new Result<HttpWrapper<String>>() {
+                    @Override
+                    protected void onSuccess(HttpWrapper<String> stringHttpWrapper) {
+                        mView.signupOk(stringHttpWrapper);
+                    }
+
+                    @Override
+                    protected void onFinish() {
+                        super.onFinish();
+                        mView.dissDialog();
+                    }
+                }));
+    }
 }

@@ -67,6 +67,8 @@ public class CommunityDetailActivity extends BaseActivity<CommunityDetailPresent
     NestedScrollView mCDetailTs;
     @BindView(R.id.c_detail_post_date)
     TextView mCDetailPostDate;
+    @BindView(R.id.c_detail_baoming)
+    LinearLayout mCDetailBaoming;
 
     private Article article;
 
@@ -122,6 +124,17 @@ public class CommunityDetailActivity extends BaseActivity<CommunityDetailPresent
     }
 
     @Override
+    public void signupOk(HttpWrapper<String> stringHttpWrapper) {
+
+        if(Constant.SUCCESS_CODE == stringHttpWrapper.getCode()){
+            showMessage(stringHttpWrapper.getInfo());
+        }else{
+            showMessage(stringHttpWrapper.getInfo());
+        }
+
+    }
+
+    @Override
     protected void initListener() {
         super.initListener();
         huifu.setOnClickListener(v -> {
@@ -164,6 +177,27 @@ public class CommunityDetailActivity extends BaseActivity<CommunityDetailPresent
                     .into(mCDetailUserImg);
 
             mCDetailUserName.setText(data.getUser().getNickName());
+
+            /**
+             * 如果是报名帖
+             */
+
+            switch (data.getType()){
+                case "1":
+                    //普通帖
+                    break;
+                case "2":
+                    //活动
+                    //可以报名
+                    mCDetailBaoming.setVisibility(View.VISIBLE);
+                    mCDetailBaoming.setOnClickListener(v -> {
+                        mPresenter.baoming(getUser().getId(),data.getId());
+                    });
+                    break;
+                case "3":
+                    //公告
+                    break;
+            }
         }
     }
 

@@ -8,13 +8,14 @@ import retrofit2.http.*;
 
 import java.util.List;
 import java.util.Map;
+import java.util.function.DoubleUnaryOperator;
 
 /**
  */
 public interface Api {
 
-    String BASE_URL = "http://118.25.14.84:8050/";
-//    String BASE_URL = "http://192.168.124.14:8050/";
+//    String BASE_URL = "http://118.25.14.84:8050/";
+    String BASE_URL = "http://192.168.124.14:8050/";
 
 
     @FormUrlEncoded
@@ -118,6 +119,14 @@ public interface Api {
     @POST("article/getMyCollection")
     Flowable<HttpWrapper<List<Article>>> getMyCollection(@Field("userId") String userId);
 
+    /**
+     * 得到我的活动
+     * @param userId
+     * @return
+     */
+    @FormUrlEncoded
+    @POST("article/getMyActivity")
+    Flowable<HttpWrapper<List<Article>>> getMyActivity(@Field("userId") String userId);
 
     @FormUrlEncoded
     @POST("community/getMyCommunity")
@@ -133,5 +142,9 @@ public interface Api {
     @FormUrlEncoded
     @POST("article/huifu")
     Flowable<HttpWrapper<String>> huifu(@Field("content") String data,@Field("articleId") String id,@Field("userId") String userId);
+
+    @FormUrlEncoded
+    @POST("article/baoming")
+    Flowable<HttpWrapper<String>> baoming(@Field("userId") String id,@Field("articleId") String id1);
 }
 
