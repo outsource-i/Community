@@ -12,10 +12,7 @@ import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.EditText;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.widget.*;
 import butterknife.BindView;
 import butterknife.OnClick;
 import com.even.mricheditor.ActionType;
@@ -51,6 +48,12 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ *  管理员权限 可以发
+ *  普通贴  type  1
+ *  活动贴  type  2
+ *  公告贴  type  3
+ */
 public class PostActivity extends BaseActivity<PostPresenter> implements PostContract.View, KeyboardHeightObserver {
 
 
@@ -74,9 +77,18 @@ public class PostActivity extends BaseActivity<PostPresenter> implements PostCon
     EditText mPostSubject;
     @BindView(R.id.toolbar_tu)
     TextView mToollbarTu;
+    @BindView(R.id.post_pt)
+    CheckBox mPostPt;
+    @BindView(R.id.post_hd)
+    CheckBox mPostHd;
+    @BindView(R.id.post_gg)
+    CheckBox mPostGg;
+
+    private List<CheckBox> boxList = new ArrayList<>();
 
     private KeyboardHeightProvider keyboardHeightProvider;
     private boolean isKeyboardShowing;
+    private int mPreCb = 0;
     private String htmlContent = "<p>呵呵 说点啥把</p>";
 
     private RichEditorAction mRichEditorAction;
@@ -153,6 +165,20 @@ public class PostActivity extends BaseActivity<PostPresenter> implements PostCon
         fm.beginTransaction()
                 .add(R.id.fl_action, mEditorMenuFragment, EditorMenuFragment.class.getName())
                 .commit();
+
+
+        boxList.add(mPostPt);
+        boxList.add(mPostHd);
+        boxList.add(mPostGg);
+
+        for (CheckBox checkBox : boxList) {
+            if(checkBox.isChecked()){
+                return;
+            }
+
+            boxList.get(mPreCb).setChecked(false);
+            checkBox.setChecked(true);
+        }
     }
 
     public void initViewo() {

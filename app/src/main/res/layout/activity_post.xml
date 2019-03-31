@@ -74,6 +74,33 @@
             </RelativeLayout>
         </android.support.v7.widget.Toolbar>
     </com.onion.community.view.HeaderBar>
+    <LinearLayout
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <CheckBox
+                    android:id="@+id/post_pt"
+                    android:checked="true"
+                    android:text="普通贴"
+                    android:textSize="@dimen/s12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+        <CheckBox
+                android:id="@+id/post_hd"
+                android:text="活动"
+                android:textSize="@dimen/s12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <CheckBox
+                android:id="@+id/post_gg"
+                android:text="公告"
+                android:textSize="@dimen/s12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+    </LinearLayout>
         <EditText
                 android:id="@+id/post_subject"
                 android:padding="@dimen/x8"

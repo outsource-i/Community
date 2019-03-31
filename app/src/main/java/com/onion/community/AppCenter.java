@@ -26,6 +26,8 @@ import java.util.List;
 
 
 /**
+ * 活动 公告
+ * 普通帖子
  */
 
 public class AppCenter extends MultiDexApplication {
